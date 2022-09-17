@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.homeservice.dao.AdminDao;
-import com.homeservice.dao.IAdmin;
+import com.homeservice.dao.AdminRepository;
 import com.homeservice.entities.Admin;
 import com.homeservice.entities.Branch;
 

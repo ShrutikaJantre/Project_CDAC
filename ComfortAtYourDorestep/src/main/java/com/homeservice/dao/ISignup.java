@@ -1,5 +1,7 @@
 package com.homeservice.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.Modifying;
@@ -22,7 +24,7 @@ public interface ISignup extends CrudRepository<Signup, Integer> {
 	
 	
 	@Query(value ="select id from address_tbl where hobby=:hobby",nativeQuery = true)
-	public int getId(String hobby);
+	public List<Integer> getId(String hobby);
 
 	
 	@Query(value ="select * from serviceprovider_tbl where address_id=:addressid",nativeQuery = true)
@@ -39,6 +41,8 @@ public interface ISignup extends CrudRepository<Signup, Integer> {
 
 
 	public Address save(Address address);
+
+	
 
 	
 }

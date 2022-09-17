@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+
+
 @Entity
 @Table(name = "service_tbl")
 public class Services {
@@ -23,17 +26,10 @@ public class Services {
 	private String zipcode;
 	private int servicecharge;
 	private int tax;
-	
-	
-	
-	
 	public Services() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
 	public Services(String tagline, String title, String shortdescription, String longdescription, String city,
 			String state, String zipcode, int servicecharge, int tax) {
 		super();
@@ -107,7 +103,12 @@ public class Services {
 	public void setTax(int tax) {
 		this.tax = tax;
 	}
+	@Override
+	public String toString() {
+		return "Services [serviceid=" + serviceid + ", tagline=" + tagline + ", title=" + title + ", shortdescription="
+				+ shortdescription + ", longdescription=" + longdescription + ", city=" + city + ", state=" + state
+				+ ", zipcode=" + zipcode + ", servicecharge=" + servicecharge + ", tax=" + tax + "]";
+	}
 	
 	
-
 }

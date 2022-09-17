@@ -8,6 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
+
+
+
 @Entity
 @Table(name = "admin_tbl")
 public class Admin {
@@ -101,5 +105,6 @@ public class Admin {
 				+ ", password=" + password + ", branch=" + branch + "]";
 	}
 	
-
+	
+	
 }

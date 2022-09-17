@@ -11,7 +11,7 @@ import com.homeservice.entities.Admin;
 public class AdminDao {
 	
 	@Autowired
-	private IAdmin adminRepository;
+	private AdminRepository adminRepository;
 	
 	public List<Admin> getAllAdmin() {
         List<Admin> list=(List<Admin>)this.adminRepository.findAll();

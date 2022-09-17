@@ -9,17 +9,16 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
+
+
+
+
 @Entity
 @Table(name="employee_tb")
 public class Employee {
 	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,7 +38,7 @@ public class Employee {
 	
 	//@OneToOne(cascade = CascadeType.ALL)
 	
-	private String dept;
+	 private String dept;
 
 	public Employee() {
 		super();
@@ -54,6 +53,14 @@ public class Employee {
 		this.phoneno = phoneno;
 		this.role = role;
 		this.dept = dept;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getFirstname() {
@@ -96,14 +103,6 @@ public class Employee {
 		this.role = role;
 	}
 
-	
-
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", phoneno=" + phoneno + ", role=" + role + ", dept=" + dept + "]";
-	}
-
 	public String getDept() {
 		return dept;
 	}
@@ -111,9 +110,14 @@ public class Employee {
 	public void setDept(String dept) {
 		this.dept = dept;
 	}
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
+				+ ", phoneno=" + phoneno + ", role=" + role + ", dept=" + dept + "]";
+	}
+	 
+	 
+	 
 
 }

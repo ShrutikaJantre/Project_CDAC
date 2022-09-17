@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-//import com.homeservice.controller.serviceProviderSignup;
+
 import com.homeservice.entities.Address;
 import com.homeservice.entities.Admin;
 import com.homeservice.entities.Signup;
@@ -14,16 +14,16 @@ import com.homeservice.entities.Signup;
 public class SignupDao {
 
 	@Autowired
-	private ISignup serviceProvider;
+	private ISignup iSignup;
 	
 	public List<Signup> getAllserviceprovider() {
-        List<Signup> list=(List<Signup>)this.serviceProvider.findAll();
+        List<Signup> list=(List<Signup>)this.iSignup.findAll();
         return list;
     }
 
-	public Signup addserviceProvider(Signup serviceProviderSignup) {
+	public Signup addserviceProvider(Signup obj) {
 		// TODO Auto-generated method stub
-		Signup result=serviceProvider.save(serviceProviderSignup);
+		Signup result=iSignup.save(obj);
 		return result;
        
 		
@@ -33,35 +33,39 @@ public class SignupDao {
 	public Signup loginUser(String email, String password) {
 		
 		
-			return serviceProvider.getUserByUsernamePassword(email, password);
+			return iSignup.getUserByUsernamePassword(email, password);
 	
 	}
 
-	public int getid(String hobby) {
-		return serviceProvider.getId(hobby);
+	public List<Integer> getid(String hobby) {
+		return iSignup.getId(hobby);
 		
 	}
 
 	public Signup getpass(int addressid) {
-		return serviceProvider.getPassword(addressid);
+		return iSignup.getPassword(addressid);
 
 	}
 
 	public void setNewPass(String password, String newpassword) {
 		
-		 serviceProvider.setNewPassword(password,newpassword);
+		 iSignup.setNewPassword(password,newpassword);
 		
 	}
 
 	public Signup getResult(String newpassword) {
 		
-		return serviceProvider.getResult(newpassword);
+		return iSignup.getResult(newpassword);
 	}
 
 	public Address addAddressr(Address address) {
-		return serviceProvider.save(address);
+		return iSignup.save(address);
 		
 	}
+
+	
+
+	
 	
 	
 }
